@@ -10,11 +10,6 @@
 
   tasks:
   - block:
-    - name: Login to Docker Hub
-      docker_login:
-        username: "{{ docker_id }}"
-        password: "{{ docker_key }}"
-        state: present
     - name: Image Build with WAR
       docker_image:
         build:
@@ -23,8 +18,4 @@
         name: "{{ image_name }}"
         push: yes
         source: build
-    always:
-    - name: Logout to Docker Hub
-      docker_login:
-        username: "{{ docker_id }}"
-        state: absent
+
