@@ -2,7 +2,7 @@
   gather_facts: no
 
   vars:
-    docker_id: whiter018@gmail.com
+    docker_id: whiter018
     docker_key: "{{ lookup('env', 'DOCKER_KEY')}}"
     container_name: goorm_myweb
     image_name: "{{ docker_id }}/goorm_myweb"
